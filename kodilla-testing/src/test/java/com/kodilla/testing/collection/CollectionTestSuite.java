@@ -26,12 +26,10 @@ public class CollectionTestSuite {
 
         // Given
         List<Integer> emptyList = new ArrayList<>();
+
         // When
-        List<Integer> testList = new ArrayList<>();
-        testList.isEmpty();
+
         // Then
-        Assertions.assertEquals(emptyList, testList);
-        System.out.println("Test OK - list is empty.");
 
     }
 
@@ -50,18 +48,16 @@ public class CollectionTestSuite {
         normalList.add(81);
         normalList.add(96);
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        List<Integer> resultNormalList = oddNumbersExterminator.exterminate(normalList);
-        // When
+
         List<Integer> expectedResultList = new ArrayList<>();
         expectedResultList.add(22);
         expectedResultList.add(76);
         expectedResultList.add(96);
+        // When
+        List<Integer> resultNormalList = oddNumbersExterminator.exterminate(normalList);
         // Then
         Assertions.assertEquals(resultNormalList,expectedResultList);
 
         System.out.println("Test is Okay");
     }
-
-
-
 }
