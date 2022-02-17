@@ -5,11 +5,11 @@ import java.util.List;
 
 public class ShapeCollector {
 
-    private List<Shape> listOfFigures = new ArrayList<Shape>();
+    private List<Shape> listOfFigures = new ArrayList<>();
 
-        public boolean addFigure(Shape shape) {
+    public boolean addFigure(Shape shape) {
             listOfFigures.add(shape);
-            return true;
+                return true;
         }
 
         public boolean removeFigure(Shape shape) {
@@ -26,7 +26,7 @@ public class ShapeCollector {
         }
 
         public ArrayList<String> showFigures() {
-            ArrayList<String> showFigureList = new ArrayList<String>();
+            ArrayList<String> showFigureList = new ArrayList<>();
             for (Shape currentShape : listOfFigures) {
                 String currentShowFigure = (currentShape.getShapeName() + " " + currentShape.getField());
                 showFigureList.add(currentShowFigure);

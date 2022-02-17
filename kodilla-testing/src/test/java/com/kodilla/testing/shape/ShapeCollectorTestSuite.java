@@ -157,7 +157,7 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addFigure(triangle);
             //When
             //Then
-            Assertions.assertEquals(2, shapeCollector.shapeListSize());
+            assertEquals(2, shapeCollector.shapeListSize());
             System.out.println(shapeCollector.showFigures());
         }
 
