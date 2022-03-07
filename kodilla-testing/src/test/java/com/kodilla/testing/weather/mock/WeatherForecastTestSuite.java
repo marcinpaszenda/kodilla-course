@@ -17,7 +17,9 @@ import static org.mockito.Mockito.when;
 
 @DisplayName("Weather Forecast Test Suite")
 
-@ExtendWith(MockitoExtension.class)
+@ExtendWith(MockitoExtension.class) // adnotacja ta oznacz, że rozszerzamy JUnit o dodatkowy
+                                    // mechanizm, w tym wypadku jest to Mockito
+
 public class WeatherForecastTestSuite {
 
     @BeforeAll
@@ -45,7 +47,8 @@ public class WeatherForecastTestSuite {
     class CalculateForecastTest {
 
         @Mock
-        private Temperatures temperaturesMock;
+        private Temperatures temperaturesMock;  // dzięki adnotacji @Mock nie muszę tworzyć w
+                                                // sekcji given mocka dla tej samej klasy
 
         @Test
         void testCalculateForecastWithMock() {

@@ -38,6 +38,7 @@ public class LibraryUser {
         this.peselId = peselId;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -50,8 +51,11 @@ public class LibraryUser {
                 Objects.equals(peselId,that.peselId);
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, peselId);
     }
+
+
 }
