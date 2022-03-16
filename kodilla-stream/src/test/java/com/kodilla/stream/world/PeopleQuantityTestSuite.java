@@ -29,13 +29,13 @@ public class PeopleQuantityTestSuite {
         asianCountries.add(china);
         asianCountries.add(india);
 
-        List<Country> southAmericanContries = new ArrayList<>();
-        southAmericanContries.add(brazil);
-        southAmericanContries.add(argentina);
+        List<Country> southAmericanCountries = new ArrayList<>();
+        southAmericanCountries.add(brazil);
+        southAmericanCountries.add(argentina);
 
         Continent europe = new Continent("Europe", europeanCountries);
         Continent asia = new Continent("Asia", asianCountries);
-        Continent southAmerica = new Continent("South America", southAmericanContries);
+        Continent southAmerica = new Continent("South America", southAmericanCountries);
 
         List<Continent> continents = new ArrayList<>();
         continents.add(europe);
