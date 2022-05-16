@@ -3,21 +3,11 @@ package com.kodilla.good.patterns.challenges.Food2Door;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GlutenFreeShop implements Shop {
+public class GlutenFreeShop extends Shop {
 
     @Override
     public void process(Order order) throws OutOfStockException {
-
-        for (String product : order.getOrderProducts().keySet()) {
-            if (order.getOrderProducts().get(product) <= productList().get(product)) {
-                System.out.println("Ordered products: " + product + ", quantity: " + order.getOrderProducts().get(product));
-            } else if (productList().containsKey(product) && order.getOrderProducts().get(product) > productList().get(product)) {
-                throw new OutOfStockException("Sorry, we don't have enough " + product + ". The current stock status is: " + productList().get(product));
-            } else {
-                System.out.println(product + "is unavailable.");
-            }
-        }
-        System.out.println("Client address: " + order.getClientAddress());
+        super.process(order);
     }
 
     public Map<String, Integer> productList() {
