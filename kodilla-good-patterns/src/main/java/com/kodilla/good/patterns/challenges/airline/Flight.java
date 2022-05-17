@@ -40,4 +40,5 @@ public class Flight {
         result = 31 * result + arrivalAirport.hashCode();
         return result;
     }
+
 }
