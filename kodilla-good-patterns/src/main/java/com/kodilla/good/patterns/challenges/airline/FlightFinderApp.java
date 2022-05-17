@@ -10,5 +10,6 @@ public class FlightFinderApp {
         flightFinder.findFlightTo("Warszawa");
         flightFinder.findFlightVia("Szczecin", "Rzeszów");
 
+
     }
 }
