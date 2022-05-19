@@ -1,6 +1,5 @@
 package com.kodilla.spring.intro.shape;
 
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -31,6 +30,5 @@ public class DrawerTestSuite {
 
         //Then
         assertEquals("This is a triangle", result);
-
     }
 }
