@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 class CalculatorTestSuite {
@@ -46,9 +47,18 @@ class CalculatorTestSuite {
 
         //Given
         //When
-        calculator.div(5, 0);
+        calculator.div(5, 2);
         //Then
 
+    }
+
+    @Test
+    public void testDivByZero() {
+
+        //Given
+        //When
+        //Then
+        assertThrows(ArithmeticException.class, () -> calculator.div(5, 0));
     }
 
 }
