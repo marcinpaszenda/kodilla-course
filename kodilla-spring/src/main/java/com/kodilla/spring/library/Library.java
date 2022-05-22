@@ -10,6 +10,31 @@ import java.util.List;
 public final class Library {
 
     private final List<String> books = new ArrayList<>();
+    private LibraryDbController libraryDbController;
+
+    public Library(final LibraryDbController libraryDbController) {
+        this.libraryDbController = libraryDbController;
+    }
+
+    public Library() {
+    }
+
+    public void saveToDb() {
+        libraryDbController.saveData();
+    }
+
+    public void loadFromDb() {
+        libraryDbController.loadData();
+    }
+
+
+
+
+
+    /*
+
+
+    private final List<String> books = new ArrayList<>();
 
     // Wstrzykiwanie zależności do właściwości klasy (bezpośrednio do pola klasy)
     @Autowired
@@ -38,4 +63,8 @@ public final class Library {
     public void loadFromDb() {
         libraryDbController.loadData();
     }
+
+
+    */
+
 }

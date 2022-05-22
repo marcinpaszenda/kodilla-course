@@ -18,8 +18,9 @@ class CalculatorTestSuite {
 
         //Given
         //When
-        calculator.add(2,4.5);
+        double addResult = calculator.add(2, 4.5);
         //Then
+        assertEquals(addResult, 6.5);
     }
 
     @Test
@@ -47,8 +48,9 @@ class CalculatorTestSuite {
 
         //Given
         //When
-        calculator.div(5, 2);
+        double divResult = calculator.div(5, 2);
         //Then
+        assertEquals(divResult, 2.5);
 
     }
 
