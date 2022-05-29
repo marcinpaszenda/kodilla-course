@@ -1,5 +1,6 @@
 package com.kodilla.patterns.strategy.social;
 
+import com.kodilla.patterns.strategy.Customer;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
