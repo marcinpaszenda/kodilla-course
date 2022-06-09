@@ -21,7 +21,13 @@ class KodillaSpringApplicationTests {
 
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = context.getBean(Circle.class);
+
+        //Nie wiem dla czego ale musiałem zakomentować wyszukiwanie beana za pomocą metody getBean(Class class)
+        //i zastosować poniższe rozwiązanie ponieważ podczas budowania projektu w tym miejscu wyrzucało błą∂
+
+        //Shape shape = context.getBean(Circle.class);
+        Shape shape = (Shape)context.getBean("circle");
+
 
         //When
         String name = shape.getShapeName();
