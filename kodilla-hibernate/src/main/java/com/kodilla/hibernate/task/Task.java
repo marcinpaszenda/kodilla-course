@@ -2,9 +2,9 @@ package com.kodilla.hibernate.task;
 
 
 import com.kodilla.hibernate.taskList.TaskList;
-import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
