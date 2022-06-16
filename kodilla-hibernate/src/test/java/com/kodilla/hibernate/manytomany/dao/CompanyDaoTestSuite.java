@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest
@@ -13,6 +16,8 @@ class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
+
+    @Autowired EmployeeDao employeeDao;
 
     @Test
     void testSaveManyToMany() {
@@ -52,14 +57,49 @@ class CompanyDaoTestSuite {
         assertNotEquals(0, greyMatterId);
 
         //CleanUp
-        //try {
-        //    companyDao.deleteById(softwareMachineId);
-        //    companyDao.deleteById(dataMaestersId);
-        //    companyDao.deleteById(greyMatterId);
-        //} catch (Exception e) {
-        //    //do nothing
-        //}
-
-
+        try {
+            companyDao.deleteById(softwareMachineId);
+            companyDao.deleteById(dataMaestersId);
+            companyDao.deleteById(greyMatterId);
+        } catch (Exception e) {
+            //do nothing
+        }
     }
+
+    @Test
+    void testRetrieveEmployeeNamedQueries() {
+
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        employeeDao.save(johnSmith);
+        long id = johnSmith.getId();
+
+        //When
+        List<Employee> retrieveByLastname = employeeDao.retrieveByLastname("Smith");
+
+        //Then
+        assertEquals(1, retrieveByLastname.size());
+
+        //CleanUp
+        employeeDao.deleteById(id);
+    }
+
+    @Test
+    void testRetrieveCompanyByFirstThreeLettersNamedQueries() {
+
+        //Given
+        Company softwareMachine = new Company("Software Machine");
+        companyDao.save(softwareMachine);
+        long id = softwareMachine.getId();
+
+        //When
+        List<Company> retrieveCompanyByFirstThreeLetters = companyDao.retrieveCompanyByFirstThreeLetters("Sof");
+
+        //Then
+        assertEquals(1, retrieveCompanyByFirstThreeLetters.size());
+
+        //CleanUp
+        companyDao.deleteById(id);
+    }
+
 }
