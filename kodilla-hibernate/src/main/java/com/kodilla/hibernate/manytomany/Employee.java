@@ -6,10 +6,19 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(
-        name = "Employee.retrieveByLastname",
-        query = "FROM Employee WHERE lastname = :LASTNAME"
+@NamedQueries({
+        @NamedQuery(
+                name = "Employee.retrieveByLastname",
+                query = "FROM Employee WHERE lastname = :LASTNAME"
+        ),
+        })
+        @NamedNativeQuery(
+        name = "Employee.findAnEmployeeByPartOfTheName",
+        query = "SELECT * FROM EMPLOYEES " + "WHERE FIRSTNAME LIKE :PARTNAME OR LASTNAME LIKE :PARTNAME",
+        resultClass = Employee.class
 )
+
+
 
 @Entity
 @Table(name = "EMPLOYEES")
